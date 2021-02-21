@@ -2,7 +2,7 @@ const BG_COLOUR = '#231f20';
 const SNAKE_COLOUR = '#c2c2c2';
 const FOOD_COLOUR = '#e66916';
 
-const socket = io('https://vast-spire-20853.herokuapp.com/');
+const socket = io('http://127.0.0.1:5000/');
 
 socket.on('init', handleInit);
 socket.on('gameState', handleGameState);
@@ -109,6 +109,7 @@ function handleGameOver(data) {
 }
 
 function handleGameCode(gameCode) {
+  console.log("gameCode",gameCode);
   gameCodeDisplay.innerText = gameCode;
 }
 
